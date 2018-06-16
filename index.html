@@ -1,0 +1,207 @@
+<!Doctype HTML>
+<html>
+    <head>
+	<meta name = "viewport" content = "width=device-width initial-scale=1.0">
+	<style>
+	    *{
+		margin: 0;
+		padding: 0;
+	    }
+
+	    body{
+		font-family: helvetica;
+		overflow-x: hidden;
+	    }
+
+	    .container{
+		display: grid;
+		grid-template-columns: 8% repeat(3,1fr);
+		grid-template-rows: 7% 8% repeat(3,auto) 7%;
+		grid-template-areas:
+		"header header header header"
+		". title title misc"
+		". content content content"
+		". content content content"
+		". content content content"
+		"footer footer footer footer";
+		grid-gap: 25px;
+		align-items: stretch;
+		width: 100vw;
+		height: 100vh;
+		grid-row-gap: 2%;
+	    }
+
+	    .item{
+	    	display: flex;
+	    }
+
+	    #header{
+		grid-area: header;
+		background-color: #1739;
+		display: grid;
+		grid-template-columns: repeat(3,auto);
+		grid-template-areas: "home information resources";
+		align-content: center;
+	    }
+
+	    .headeri{
+		display: block;
+		text-align: center;
+		font-size: 150%;
+	    }
+
+	    .headeri:hover{
+		cursor: pointer;
+		color: #888;
+	    }
+
+	    .home{
+		grid-area: home;
+	    }
+
+	    .information{
+		grid-area: information;
+	    }
+
+	    .resources{
+		grid-area: resources;
+	    }
+
+	    #title{
+		grid-area: title;
+		font-size: 150%;
+	    }
+
+	    @media screen and (max-width: 750px){
+		h1{
+		    font-size: 132%;
+		}
+	    }
+
+	    @media screen and (max-width: 440px){
+		h1{
+		    font-size: 110%;
+		}
+	    }
+
+	    #misc{
+		grid-area: misc;
+	    }
+
+	    #content{
+		grid-area: content;
+		display: grid;
+		grid-template-rows: repeat(8,auto);
+		grid-template-columns: 75%;
+		grid-row-gap: 15px;
+	    }
+
+	    @media screen and (max-width: 505px){
+		#content{
+		    grid-area: content;
+		    display: grid;
+		    grid-template-rows: repeat(14,auto);
+		    grid-template-columns: 90%;
+		    grid-row-gap: 10px;
+		}
+	    }
+
+	    .text{
+		font-size: 110%;
+		line-height: 150%;
+	    }
+
+	    @media screen and (max-width: 440px){
+		.text{
+		    font-size: 85%;
+		}
+	    }
+
+	    .link{
+		display: inline;
+		color: #38ca;
+		font-size: 90%;
+	    }
+
+	    .link:hover{
+		cursor: pointer;
+	    }
+
+	    #footer{
+		grid-area: footer;
+		background-color: #222;
+		display: grid;
+		align-items: center;
+	    }
+
+	    #name{
+		color: #fff6;
+		text-align: center;
+	    }
+
+	    h2{
+		font-size: 185%;
+	    }
+
+	    @media screen and (max-width: 440px){
+		h2{
+		    font-size: 150%;
+		}
+	    }
+	</style>
+	<script>
+	    window.onload = function(){
+		var title = document.getElementById("title");
+	        var footer = document.getElementById("footer");
+	        var header = document.getElementById("header");
+	        var items = document.getElementById("item");
+		home();
+	    }
+
+	    function home(){
+		var content = document.getElementById("content");
+		title.innerHTML = "<h1>Home</h2>"
+		content.innerHTML = "<h2>What are Mental Illnesses?</h2><div class = 'text'>&emsp;Mental illnesses, also referred to as mental disorders or mental diseases, are problems that occur in the brain that may affect someone's personality, their ability to move parts of their bodies, their memory, etc. These problems may come as a result of many different things, with more common reasons including your genetics, the development of certain parts of your brain, or other reasons which we still do not understand. Given the vast amount of ways that the brain can be affected by problems, no matter how small, there are dozens of different disorders that can all affect someone in ways unlike any other. Some of the more popular illnesses include those such as anxiety, a disorder that primarily affects the ability to distinguish the difference between what should and should not be feared; depression, an illness that limits the amount of happiness one can experience throughout their day to day lives; and ADHD, a problem that drastically limits the attention span of the sufferer. Whatever the case, these disorders may affect people in different ways and will often require everyone's own unique way of handling it and getting treated.</div><h2>Diagnosis of Mental illnesses</h2><div class = 'text'>&emsp;It can sometimes be quite difficult to accurately diagnose a mental disorder, but we do have trusted methods that have worked to identify a disorder. If you need or want to get diagnosed, there are a few options you could try. For deciding which option to go with, you should to consult with your doctor or a professional on the matter to see which method would work best for you.<br><br><b>1) Psychological Tests</b><br>This type of test is performed by psychologists or doctors, and will consist of a series of questions that may determine what kind of mental illness you may have. They may also consist of other forms of tests, such as those to test your ability to move certain muscles, remember things, or your involuntary movements, which could help diagnose illnesses outside of only the brain.<br><br><b>2) Lab Tests</b><br>Lab tests will typically have several different ways of diagnosing an illness, with some common methods including screenings and blood tests. Mental health screenings are very useful methods of noticing a mental illness, even before some of the symptoms have taken into affect. Blood tests are typically done to check the amount of nutrients, neurotransmitters, proteins, etc. circulating throughout your body, which could show signs of disorders, with some of the more commonly diagnosed via blood tests being depression and schizophrenia.<br><br><b>3) Physical Examinations</b><br>These tests are not typically done to directly diagnose mental illnesses, but are used to see if you may have other diseases or problems that could lead to or has led to you contracting a disorder. This is typically done by a doctor, who will use the test to get rid of possible causes to how you may be feeling that could be linked to other causes outside of just your brain.</div><br><br>";
+	    }
+
+	    function information(){
+		var content = document.getElementById("content");
+		title.innerHTML = "<h1>Mental Illnesses</h2>";
+		content.innerHTML = "<h2><br>Anxiety Disorders</h2><div class = 'text'>&emsp;Anxiety disorders are illnesses that will generally make everyday situations lead to fear or anxious feelings in those suffering from it. Anxiety may often lead to overwhelming feelings of panic, which would make people experience a faster heart rate, worry about everything around them, sweating, shaking, etc. These feelings may drastically affect the sufferer's ability to accomplish everyday tasks, with, in extreme cases, could leave them unable to leave their house out of fear. The anxiety disorders... <div class = 'text link' onclick = 'anxiety()'>Read More >></div></div><h2>Depression</h2><div class = 'text'>&emsp;Depression is a severe mental illness that primarily affects the amount of happiness and enjoyment you may experience throughout your everyday life. Those suffering from a depressive period may lose enjoyment out of things they had previously loved to do and could lead to the constant feeling of neverending thoughts that directly impact how you view the world. This often leads to feelings of loneliness, helplessness, self-doubt, and uselessness. Unfortunately, depression is a very common problem, leaving anyone susceptible to its affects. If gone untreated, the impact of depression will generally worsen and, if left to linger long enough, could lead to self-harm and even attempts of suicide. Treatment for depression is fortunately widely available, and if you're experiencing any signs of it, it would be greatly encouraged to get help... <div class = 'text link' onclick = 'depression()'>Read More >></div></div>";
+	    }
+
+	    function resources(){
+		var content = document.getElementById("content");
+		title.innerHTML = "<h1>Resources</h2>";
+		content.innerHTML = "";
+	    }
+
+	    function anxiety(){
+		window.scrollTo(0,0);
+		var content = document.getElementById("content");
+		title.innerHTML = "<h1>Anxiety</h1>";
+		content.innerHTML = "<h2>What is Anxiety?</h2><div class = 'text'>&emsp;Anxiety disorders are illnesses that will generally make everyday situations lead to fear or anxious feelings in those suffering from it. Anxiety may often lead to overwhelming feelings of panic, which would make people experience a faster heart rate, worry about everything around them, sweating, shaking, etc. These feelings may drastically affect the sufferer's ability to accomplish everyday tasks, with, in extreme cases, could leave them unable to leave their house out of fear. Anxiety disorders may differ from everyone who has it, leading some people to only experience anxious feelings because of certain things, and everyone will have their own ways of dealing with it. Unlike other disorders, the affects of anxiety and the treatment for it is generally understood. For anyone with anxiety, there are ways to treat it and control your feelings, and it is very much encouraged to get help to deal the problem.</div><h2>Types of Anxiety</h2><div class = 'text'>Despite the disorders often being generalized to only anxiety, there are numerous different types of anxiety disorders. Every type is generalized by its own way of inflicting fear onto the sufferer, with every variation affecting them in different ways.<br><br><b>1) Generalized Anxiety Disorder</b><br>Generalized Anxiety Disorder (commonly shortened to GAD) is a disorder that inflicts constant fear to the sufferer from several different things. Those with GAD may fear about everyday things such as their relationship, family, finances, etc., and may find it hard to do stop their worrying for certain things. This could often lead to several large periods where they may not be able to accomplish simple tasks because of the worry of an upcoming event or something that had already happened, and may make the person feel fatigued or tired after a long period of time.<br><br><b>2) Social Anxiety</b><br>This type of anxiety primarily causes people to experience panic or worry in social situations, often from the fear of being judged or disliked by others. The fear of socializing could lead to situations where the sufferer may try to avoid certain things that may require them to interact with other individuals. Social anxiety could drastically affect someone's life, limiting what they may be capable of doing because of that fear. This may stop them from being able to maintain a job or keep a steady relationship with family or a loved one, and could even lead to panic attacks in situations that make them to be especially fearful.<br><br><b>3) Panic Disorder</b><br>Panic disorder is characterized by the excessive and frequent occurences of panic attacks. These attacks may lead those experiencing it in a state of complete and uncontrollable fear which may include symptoms of shaking, faster heart rate, sweating, loss of breath, and parts of their bodies going numb. These periods can be terrifying for the person experiencing it and, in the most extreme cases, may make them feel unable to leave their own home out of fear of experiencing another one. For someone suffering from panic disorder, attacks may often be unpredictable and can occur at any moment, but, if associated with other disorders like social anxiety, may occur out of a certain situation. They may also feel the need to have a companion near them in case they experience another one, and may limit the amount of time they spend outside their homes because of the attacks.</div><h2>Difference Between Anxiety and General Fear<br></h2><div class = 'text'>Everyone in their lives will experience some form of fear, panic, or worry for a multitude of things. This could include anything from financial problems, family or relationship issues, jobs, etc. Additionally, you may also experience a panic attack out of fear of something, and may not want to do it as a result. This, however, does not mean that you have an anxiety disorder. It is common for everyone to experience these types of feelings, but those will an anxiety disorder will generally have all of those feelings elevated to a level that becomes uncontrollable, which could drastically affect their day to day lives. If you do, however, believe that the feelings you are experiencing are because of an anxiety disorder, your best option would be talk to your doctor, counselor, and anyone else that you trust to help make sure that you get the correct help that you need.</div><h2>How to Tell If You Have Anxiety</h2><div class = 'text'>All cases of anxiety are different and will almost always affect people in ways unlike others. Nevertheless, there are some ways to tell whether or not you may be experiencing some form of anxiety. Some signs that may indicate that include the constant reoccurence and fear of panic attacks, worry or fear about everyday tasks or upcoming events, shakiness or sweating while in tense situations, and faster heart rate and blood pressure in positions where it isn't exactly necessary or would cause the same reaction out of another individual. You may also sometimes feel as if you may be going crazy or a loss of breath and dizziness. You may think too much about certain situations that could involve socializing, speaking or performing in front of a large audience, or even leaving your own home. If any of these situations seem even relatively familiar as a part of your life and you feel as if they don't allow you to do certain things, your best option would be to reach out to any trusted individual and seek help from a professional, as this will generally help with being able to cope with these feelings.</div><h2>Anxiety in the Brain</h2><div class = 'text'>Within our brains, there is a small horseshoe shaped part within the top section of it known as the amygdala. This small part is responsible for our fight or flight response, which is triggered to alert you that you may be in danger of something. Once this signal is sent out, our bodies will react by raising our blood pressure, increasing our heart rate, and may make you feel frightened or scared. For those with anxiety disorders, their amygdala may often release this feelings in times that wouldn't be necessary, resulting in worry and panic attacks. Additionally, certain neurotransmitters such as seratonin, a chemical sent out to control your mood, may not be released as often throughout your brain, which could possibly be what leads to negative thoughts and feelings.</div><h2>Treatment</h2><div class = 'text'>Anxiety in general is a generally understood mental disorder, which as a result allows for us to have figured out ways to ease and control some of its affects it may have on us. Some of the common ways for dealing with anxiety include various different types of therapy, medication, and techniques that naturally calm you down such as yoga or meditation. With therapy, some of the common ways to get treated is by going to cognitive behavioural therapy, a type of therapy that tries several hands-on methods to help ease your stress, and psychotherapy, which relies more on talking with someone about anything to do with your daily life or your general stresses and worries. A common type of medication to be used is any type of benzodiazepines, a type of drug that primarily calms down the body and lowers the stress. Some benzodiazepines that may be prescribed include xanax, valium, klonopin, and others. Along with them, antidepressants may also be described to lessen any negative thoughts you may have as a result of your anxiety, which could ease some of the stress you may experience. The last common method for dealing with anxiety is meditation or other calming activities, which, if done right, could lower the fear and worry you may have, and can even be used to control any panic attacks without the use of drugs.</div><h2>Resources</h2><div class = 'text'><b><u>Mindshift</u></b><br>Mindshift is an app for both IOS and Android that you can use as a resource to help calm yourself down if you ever feel too anxious. The app can also provide you with a general understanding on how severe your anxiety is, and can help you out with getting the correct treatment you deserve.<br><a href = 'https://itunes.apple.com/ca/app/mindshift/id634684825?mt=8'>Mindshift IOS</a><br><a href = 'https://play.google.com/store/apps/details?id=com.bstro.MindShift&hl=en'>Mindshift Android</a><br><br><b><u>AnxietyBC</u></b><br>AnxietyBC is an online resource for those either with anxiety or wanting to learn more about it that provides large amounts of information about the illness and how to deal with it. It includes several places where you can learn about what some signs are for the disorder for both adults and children, and provides places where you can go to find the best way to treat your problem and ease some of the affects.<br><a href = 'https://www.anxietybc.com/'>AnxietyBC.com</a><br><br><b><u>Anxiety.org</u></b><br>Anxiety.org is a website that provides large amounts of information about all different types of anxiety, including those such as OCD, PTSD, seperation anxiety, phobias, and all the ones listed above, and gathers all of its information via psychologists and doctors, all of which are experts on the matter. It provides several different articles about the affects and development of the illness, and includes large amounts of ways to cope with it.<br><a href = 'https://www.anxiety.org/'>Anxiety.org</a><br><br><b><u>Anxiety Disorders Association of Canada</u></b><br>ADAC is a non-profit Canadian orgnanization that aims to help out those suffering from anxiety and improve their day to day lives. It strives to promote the research and prevention of the illness, and also the treatment and cures we have developed for it. Provided that it is a Canadian organization, the ADAC also provides a full translation in French for everything on the site.<br><a href = 'http://www.anxietycanada.ca/'>Anxiety Disorders Association of Canada</a><br><br><b><u>Anxiety Disorders Association of Manitoba</u></b><br>ADAM is a website that provides large amounts of information for those struggling from anxiety living in Manitoba. It provides an obundance of resources for those who need to reach out to someone, including several crisis lines and counselling resources. It also includes a section for any newsletters and stories related to anxiety, which includes information on other people's experiences with it and methods of coping.<br><a href = 'http://www.adam.mb.ca/'>Anxiety Disorders Association of Manitoba</a></div>";
+	    }
+
+	    function depression(){
+		window.scrollTo(0,0);
+		var content = document.getElementById("content");
+		title.innerHTML = "<h1>Depression</h2>";
+		content.innerHTML = "<h2>What is Depression?</h2><div class = 'text'>&emsp;Depression is a severe mental illness that primarily affects the amount of happiness and enjoyment you may experience throughout your everyday life. Those suffering from a depressive period may lose enjoyment out of things they had previously loved to do and could lead to the constant feeling of neverending thoughts that directly impact how you view the world. This often leads to feelings of loneliness, helplessness, self-doubt, and uselessness. Unfortunately, depression is a very common problem, leaving anyone susceptible to its affects. If gone untreated, the impact of depression will generally worsen and, if left to linger long enough, could lead to self-harm and even attempts of suicide. Treatment for depression is fortunately widely available, and if you're experiencing any signs of it, it would be greatly encouraged to get help by a professional, even if the symptoms may not have fully developed. This could lead to the prevention of the illness to worsen, which could make for a much more difficult position to escape. For anyone suffering from depression, the best thing to do would be to get help from a psychologist or doctor and surround yourself with those you love and trust, as this will lead to the negative thoughts and feelings to be slightly lessened, which will provide an opportunity to save yourself from the grasp of the disorder.</div><h2>Symptoms of Depression</h2><div class = 'text'>Depression is a very common disorder, so knowing the symptoms could be very useful in determining if you may have it or not. </div>";
+	    }
+	</script>
+    </head>
+    <body>
+	<div class = "container">
+	    <div class = "item" id = "header">
+		<div class = "headeri home" onclick = "home()">Home</div>
+		<div class = "headeri information" onclick = "information()">Information</div>
+		<div class = "headeri resources" onclick = "resources()">Resources</div>
+	    </div>
+	    <div class = "item" id = "title"></div>
+	    <div class = "item" id = "content"></div>
+	    <div class = "item" id = "footer"><div id = "name">Faisal Alsaidi<br>8L-302</div></div>
+	    <div class = "item" id = "misc"></div>
+	</div>
+    </body>
+</html>
